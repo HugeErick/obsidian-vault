@@ -16,7 +16,7 @@ use vulkano::VulkanLibrary;
 
 fn main() {
     // Initialization
-    let library = VulkanLibrary::new().expect("no local Vulkan library/DLL");
+    let library = VulkanLibrary::new().expect("no local Vulkan library");
     let instance = Instance::new(
         library,
         InstanceCreateInfo {
