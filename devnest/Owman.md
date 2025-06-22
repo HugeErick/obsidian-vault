@@ -92,6 +92,8 @@ Common MariaDB/MySQL commands for database operations:
 ### Find process ID:
 
 `ps aux`
+### To verify the correct class name for
+`xprop | grep WM_CLASS`
 
 ---
 
