@@ -1,0 +1,2 @@
+## Install choco
+`Get-ExecutionPolicy`

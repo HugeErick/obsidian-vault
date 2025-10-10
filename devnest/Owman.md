@@ -26,35 +26,102 @@
 |Ö|O with umlaut (German)|`00d6`|
 |ß|Eszett (sharp S) (German)|`00df`|
 
----
+## Filezilla to share files is the best option
+
+## ZEROSSL WORKED WITH REVERSE NGINX!!!
 
 ## Neovim Tricks (some may work in vanilla vim too)
 
-### Function Definition Search
+### Life-changing Basics
 
-Press `gd` in normal mode to find function definitions.
+```
+:q!         " Quit without saving (force quit)
+:saveas ~/new/path.txt  " Save current file with new name/path
+:r filename " Insert contents of another file here
+:r !ls      " Insert output of shell command (ls, date, etc)
 
-### English Dictionary
+```
 
-Enable with `setlocal spell spelllang=en`, check suggestions with `z=`, add words with `zg`.
+### Navigation
 
-keybind to enable dictionary: `mapleader + ss` in normal mode.
+```
+gd          " Go to function definition under cursor
+gf          " Go to file under cursor (great for code)
+Ctrl-o      " Jump back to previous location
+Ctrl-i      " Jump forward
+:ju         " Show jump list (history of where you've been)
 
-### Text Replacement
+```
 
-Use `:%s/foo/bar/g` to replace text globally (add `c` for confirmation).
+### Advanced Editing
 
-### Buffer Navigation
+```
+Ctrl-a      " Increment number under cursor
+Ctrl-x      " Decrement number under cursor
+gv          " Reselect last visual selection
+:set paste  " Turn on paste mode (prevents formatting mess)
+:set nopaste " Turn it off
+* (in visual mode) " searches selected pattern 
 
-Switch buffers with `:bn`, return to previous position using `Ctrl + o`.
+```
 
-### Code Formatting
+### File Management
 
-Format with Prettier using `&lt;Leader&gt;p`, activate Copilot with `&lt;Leader&gt;t`.
+```
+:Explore    " Open file explorer (or :Sex for split)
+:ls         " List all open buffers
+:b 2        " Switch to buffer number 2
+:bd         " Close current buffer (keep window open)
+:bn         " Switch to next buffer
 
-### Accept copilot suggestion
+```
 
-`Ctrl + l`
+### Text Operations
+
+```
+:%s/foo/bar/g " Replace text globally (add 'c' for confirmation)
+
+```
+
+### Search Techniques
+
+```
+/pattern\\\\c   " Search without case sensitivity
+/\\\\cpattern   " Alternative method for case-insensitive search
+
+```
+
+### Pro Tips & Hidden Gems
+
+```
+:!python %   " Run current Python file
+:!node %     " Run current JavaScript file
+:!gcc % && ./a.out  " Compile and run C program
+:help tutor  " Run vimtutor inside Vim!
+:help usr_02.txt " User manual chapter 2 (basic editing)
+:helpgrep pattern " Search all help files
+
+```
+
+### Language Tools
+
+```
+" English Dictionary
+setlocal spell spelllang=en
+z=          " Check spelling suggestions
+zg          " Add word to dictionary
+<leader>ss  " Keybind to enable dictionary (normal mode)
+
+```
+
+### AI Assistance
+
+```
+<Leader>p   " Format with Prettier
+<Leader>t   " Activate Copilot
+Ctrl + l    " Accept copilot suggestion
+
+```
 
 ---
 
@@ -77,13 +144,17 @@ Common MariaDB/MySQL commands for database operations:
 
 ## Miscellaneous Commands
 
-### Get GitHub token:
-
-`sudo grep 'GITHUB-DEVSETTINGS-TOKEN=' keys | sed 's/.*GITHUB-DEVSETTINGS-TOKEN=\\\\(.*\\\\)/\\\\1/' | wl-copy`
-
 ### Unzip to destination folder:
 
 `unzip <zipfile> -d <destination>`
+
+### Zipping a folder
+
+`zip -r archive_name.zip folder_name/`
+
+to exclude something
+
+`zip -r zipname.zip folder_name -x "*.venv/*"`
 
 ### Extract `.tar.gz` File
 
@@ -92,40 +163,26 @@ Common MariaDB/MySQL commands for database operations:
 ### Find process ID:
 
 `ps aux`
-### To verify the correct class name for
-`xprop | grep WM_CLASS`
 
----
+### Batery percentage
 
-## Commitlint Common Types
+`upower —dump`
 
-According to [commitlint-config-conventional](https://github.com/conventional-changelog/commitlint):
+### Get classname and some .desktop properties with cursor
 
-- `build`
-- `chore`
-- `ci`
-- `docs`
-- `feat`
-- `fix`
-- `perf`
-- `refactor`
-- `revert`
-- `style`
-- `test`
+`xprop`
 
----
+### Searching on remote repositories (pacman)
 
-## GitHub Initialization
+`sudo pacman -Ss <search_term
 
-```bash
-git init
-git add .
-git commit -m "first commit"
-git remote add origin <repo.git>
-git branch -M main
-git push -u origin main
+### Start venv py3
 
-```
+`py -m venv .venv  "activate with source command in linux`
+
+### Compile and link assembly (x86_64, Linux):
+
+`nasm -f elf64 -g filename.asm -o objectfile.o && ld -m elf_x86_64 objectfile.o -o executable`
 
 ---
 
@@ -145,16 +202,22 @@ git push -u origin main
 
 ---
 
+
 ## Nmap
 
 ### First Touch Scan suggestion
 
-`nmap -sC -sV -oA nmap/foldername <ip_address>`
+`nmap -sC -sV -vv -O -oA ~/poly/nmap/foldername/ <ip_address>`
 
 ### nmap flags in the command
 
 - **-sC**: Runs default scripts, performing common security checks
 - **-sV**: Probes open ports to determine service/version info
+- *-*vv: extra verbose
+- **-O** OS fingerprinting
+
+Nmap sends a special set of TCP, UDP and ICMP probes whose subtle variations in window size, TTL, DF bit, TOS, sequence numbers, etc. create a unique “fingerprint.”
+
 - **-oA**: Outputs scan results in three formats (normal, XML, and grepable) with the specified filename prefix
 
 ### suggested additional flags to enhance scans
@@ -163,14 +226,6 @@ git push -u origin main
 - **-T4**: Faster timing template (aggressive scan)
 - **--open**: Only show open ports
 - **-Pn**: Treat all hosts as online (skip host discovery)
-
----
-
-## Assembly
-
-### Compile and link assembly (x86_64, Linux):
-
-`nasm -f elf64 -g filename.asm -o objectfile.o && ld -m elf_x86_64 objectfile.o -o executable`
 
 ---
 
@@ -242,13 +297,13 @@ git push -u origin main
 
 ### Connect
 
-`sudo ssh -i <key> ubuntu@<ip>`
+`sudo ssh -X -i <key> ubuntu@<ip>`
+
+where ubuntu is: `username`
 
 ### Detach
 
 `Ctrl + d`
-
----
 
 ---
 
@@ -262,86 +317,12 @@ pavucontrol
 ```
 
 ---
-
-## Stuck `sudo`
-
-```bash
-stty sane
-# or
-sudo pkill sudo
-
-```
-
----
-
 ## HDMI Display Mirroring
 
 ```bash
 xrandr --output HDMI-1 --same-as eDP-1 --auto
 
 ```
-
----
-
-## Keyboard Issues
-
-### Disable key repeat:
-
-`xset -r`
-
-### Re-enable key repeat:
-
-`xset r`
-
----
-
-## Neo-tree keybindings for navigation and file operations:
-
-### Basic Navigation:
-
-- `j` and `k`: Move up and down in the tree
-- `t`: Open folder or open file in new tab
-- `<C-t>`: Toggle Neo-tree window (we set this in the config)
-- `<CR>` Open file/folder
-- `.`: Set the root of the tree to current directory
-- `<BS>` Go up one directory
-- `h`: Toggle hidden files (.gitignore, .hidden, etc)
-
-File Operations:
-
-- `a`: Add a new file/directory (will prompt for name)
-- `d`: Delete the file/directory under cursor
-- `r`: Rename the file/directory under cursor
-- `y`: Copy file name to system clipboard
-- `Y`: Copy relative path to system clipboard
-- `<C-y>`: Copy absolute path to system clipboard
-- `c`: Copy file/directory to a destination
-- `m`: Move file/directory to a destination
-
-Working with Multiple Files:
-
-- `<Space>`: Mark file (for bulk operations)
-- `<C-Space>`: Clear marked files
-- `s`: Open file in a split
-- `S`: Open file in vertical split
-
-Finding Files:
-
-- `/`: Start a live filter of nodes in the tree
-- `<C-x>`: Clear the live filter
-- `<Esc>`: Clear live filter and cancel any operation
-- `f`: Filter tree by pattern (more powerful than live filter)
-
-Refresh and Git:
-
-- `R`: Refresh the tree
-- `?`: Open help menu with all keybindings
-- `g?`: Show git status
-
-Some Tips:
-
-1. If you mark multiple files with `<Space>`, operations like delete will affect all marked files
-2. The live filter (`/`) is great for quickly finding files in large projects
 
 ---
 
@@ -366,3 +347,64 @@ Some Tips:
 ## Greenclip (linux i3)
 
 `nohup greenclip daemon &`
+
+## Update windsurf with source tarball
+
+### 1. Remove the old installation
+
+```bash
+sudo rm -rf /opt/windsurf
+```
+
+### 2. Extract the tarball
+
+```bash
+cd ~/downloads
+tar -xvzf Windsurf-linux.tar.gz
+```
+
+This will give you a fresh `Windsurf/` or `Windsurf-linux-x64-1.12.3/` folder.
+
+### 3. Move it to `/opt`
+
+```bash
+sudo mv Windsurf /opt/windsurf
+```
+
+(or if the folder is named differently, adjust accordingly)
+
+### 4. Recreate the symlink
+
+Remove the old one just in case:
+
+```bash
+sudo rm -f /usr/local/bin/windsurf
+```
+
+Then make the new link (check if the binary is lowercase or uppercase):
+
+```bash
+sudo ln -s /opt/windsurf/windsurf /usr/local/bin/windsurf
+```
+
+## Discord
+
+### Secc Acc
+
+mail: `dravenmid62@gmail.com`
+
+user: `massiveAnalizer`
+
+psw: `z`
+
+## Firefox custom config (about:config)
+### External  and internal link opening firefox
+
+Change the preference for `browser.link.open_newwindow.override.external` to `3` to open external links in a new tab in the last active window instead opening new instance, for internal links verify that the value of `browser.link.open_newwindow` is also set to 3.
+
+### Adjusting Firefox DPI settings
+
+modify `layout.css.devPixelsPerPx` (default is `-1.0` which uses system DPI)
+
+### Disable private translations 
+`browser.translations.enable` set it to false
