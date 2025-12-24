@@ -1,15 +1,9 @@
-### Life-changing Basics
+### Basics
 
 ```
 :saveas ~/new/path.txt  " Save current file with new name/path
 :r filename " Insert contents of another file here
 :r !ls      " Insert output of shell command (ls, date, etc)
-
-```
-
-### Navigation
-
-```
 gd          " Go to function definition under cursor
 gf          " Go to file under cursor
 Ctrl-o      " Jump back to previous location
@@ -48,11 +42,16 @@ gv          " Reselect last visual selection
 
 ```
 
-### Search Techniques
+### Search  & Jump Techniques
 
 ```
 /pattern\c   " Search without case sensitivity
 /\cpattern   " Alternative method for case-insensitive search
+  " Set a Mark:
+Press `m` followed by any letter (e.g., `ma`).
+    
+  " Teleport back:
+Press `'` (apostrophe) followed by that letter (e.g., `'a`).
 
 ```
 
@@ -64,11 +63,11 @@ gv          " Reselect last visual selection
 :!gcc % && ./a.out  " Compile and run C program
 :help tutor  " Run vimtutor inside Vim!
 :help usr_02.txt " User manual chapter 2 (basic editing)
-:helpgrep pattern " Search all help files
+:lua vim.diagnostic.goto_next() " Goes to the next error (lsp)
 
 ```
 
-### Language Tools leader = ,
+### Extra
 
 ```
 " English Dictionary
@@ -77,7 +76,7 @@ z=          " Check spelling suggestions
 zg          " Add word to dictionary
 <leader>ss  " Keybind to enable dictionary (normal mode)
 <leader>ll  " Compile latex
-
+<leader>th  " toggle theme
 ```
 
 ### AI Assistance
@@ -89,3 +88,6 @@ Ctrl + l    " Accept copilot suggestion
 ```
 
 ---
+## Neo-tree
+
+`.` makes select node root

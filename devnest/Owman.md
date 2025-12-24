@@ -108,33 +108,7 @@ to exclude something
 
 ---
 
-## Nmap
 
-### First Touch Scan suggestion
-
-`nmap -sC -sV -vv -O -oA ~/poly/nmap/foldername/ <ip_address>`
-
-### nmap flags in the command
-
-- **-sC**: Runs default scripts, performing common security checks
-- **-sV**: Probes open ports to determine service/version info
-- **-vv**: extra verbose
-- **-O** OS fingerprinting
-
-Nmap sends a special set of TCP, UDP and ICMP probes whose subtle variations in window size, TTL, DF bit, TOS, sequence numbers, etc. create a unique “fingerprint.”
-
-- **-oA**: Outputs scan results in three formats (normal, XML, and grepable) with the specified filename prefix
-
-### suggested additional flags to enhance scans
-
-- **-p-**: Scan all 65535 ports (more thorough but slower)
-- **-T4**: Faster timing template (aggressive scan)
-- **--open**: Only show open ports
-- **-Pn**: Treat all hosts as online (skip host discovery)
----
-
-`nmap -p1-65535 -sS -T4 143.110.227.127`
-This command performs a **stealthy, full port scan** on the target IP address `143.110.227.127` at a **fast speed**. Its goal is to find every single open TCP port on the machine, from the first to the last possible port, without completing the full TCP connection handshake.
 
 ---
 
