@@ -1,36 +1,38 @@
-### Essential Shortcuts (Prefix: `Ctrl+b`)
+## Tmux
 
-- `Ctrl+b c` - Create new window
-- `Ctrl+b n` - Next window
-- `Ctrl+b p` - Previous window
-- `Ctrl+b 0-9` - Switch to window number 0-9
-- `Ctrl+b %` - Split pane vertically
-- `Ctrl+b "` - Split pane horizontally
-- `Ctrl+b arrow` - Switch between panes
-- `Ctrl+b x` - Close current pane
-- `Ctrl+b d` - Detach from session
+- Prefix = ctrl + x
 
-### list sessions
-`tmux ls`
+`prefix + c`  create new window
+`prefix + n`  next window
+`prefix + p`  previous window
+`prefix + 0-9`  switch to window number 0-9
+`prefix + %`  split pane vertically
+`prefix + "`  split pane horizontally
+`prefix + arrow`  switch between panes
+`prefix + x`  close current pane
+`prefix + d`  detach from session
 
-### attach session
-`tmux a -t sessionname`
+`tmux ls` list sessions 
+`tmux a -t sessionname` attach session
+`tmux kill-session -t sessionname` kill session
 
-### kill session
-`tmux kill-session -t sessionname`
+### Custom
+
+`prefix + r` tmux source-file the .tmux.conf
+
+(works thanks to key tables)
+`prefix + gi` opens github repo that may have the current path
+
 
 ## fzf
 
-### with the help of having the fzf defaults bash loaded in .bashrc
+### With the help of having the fzf defaults bash loaded in .bashrc
 
 ```bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 ```
 
-### Ctrl + r 
-`Gives the history of commands`
-### Ctrl + t
-`Gives file search`
+`ctrl + r` gives the history of commands
+`ctrl + t` gives file search
+`cdf` does change dir where the file selected with fzf is``
 
-### Custom cdf command
-`does change dir where the file selected with fzf is`

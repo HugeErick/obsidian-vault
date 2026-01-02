@@ -103,48 +103,42 @@ to exclude something
 `mkdir docx_images`
 `unzip -j your_document.docx "word/media/*" -d docx_images`
 
-### Remove non empty folder in Windows
-`rd "C:\path\to\folder" -Recurse -Force`
-
----
-
-
 
 ---
 
 ## Network Troubleshooting
 
 - **Check DNS resolution:**
-    
-    ```bash
-    cat /etc/resolv.conf
-    nslookup google.com
-    ```
-    
+
+```bash
+cat /etc/resolv.conf
+nslookup google.com
+```
+
 - **Inspect interfaces and routing:**
-    
-    ```bash
-    ip addr show
-    ip route show
-    ```
-    
+
+```bash
+ip addr show
+ip route show
+```
+
 - **Restart NetworkManager (often fixes most issues):**
-    
-    ```bash
-    sudo systemctl restart NetworkManager
-    ```
-    
+
+```bash
+sudo systemctl restart NetworkManager
+```
+
 - **Reset networking stack (if still broken):**
-    
-    ```bash
-    sudo nmcli networking off
-    sudo nmcli networking on
-    ```
-    
+
+```bash
+sudo nmcli networking off
+sudo nmcli networking on
+```
+
 - **Temporarily use Google DNS:**
-    ```bash
-    echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
-    ```
+```bash
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+```
 ---
 
 ## Audio & Microphone Fix
@@ -159,46 +153,3 @@ pavucontrol
 ## Greenclip (linux i3)
 
 `nohup greenclip daemon &`
-
-## Update windsurf with source tarball
-
-### run automated script
-
-## Discord
-
-### Secc Acc
-
-mail: `dravenmid62@gmail.com`
-
-user: `massiveAnalizer`
-
-psw: `z`
-
-## Firefox custom config (about:config)
-
-### External and Internal Link Behavior
-
-- Set `browser.link.open_newwindow.override.external` → `3`  
-    Opens external links in a **new tab** in the **last active window** instead of a new instance.
-    
-- Set `browser.link.open_newwindow` → `3`  
-    Ensures **internal links** also open in new tabs rather than new windows.
-    
-
-### DPI / UI Scaling
-
-- Set `layout.css.devPixelsPerPx` → _(e.g., `1.25`)_  
-    Adjusts Firefox’s **UI scaling**.  
-    The default `-1.0` uses system DPI automatically.
-    
-
-### Disable Built-in Translations
-
-- Set `browser.translations.enable` → `false`  
-    Disables Firefox’s **automatic translation feature**.
-    
-
-### Never Forget Cookies
-
-- Set `network.cookie.lifetimePolicy` → `0`  
-    Ensures cookies **are kept until they expire naturally** rather than being deleted when closing the browser.
