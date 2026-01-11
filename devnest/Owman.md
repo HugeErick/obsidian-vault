@@ -2,48 +2,32 @@
 
 ### Unicode Codes
 
-|Character|Description|Unicode|
-|---|---|---|
-|á|a with acute (Spanish)|`00e1`|
-|é|e with acute (Spanish)|`00e9`|
-|í|i with acute (Spanish)|`00ed`|
-|ó|o with acute (Spanish)|`00f3`|
-|ú|u with acute (Spanish)|`00fa`|
-|ñ|n with tilde (Spanish)|`00f1`|
-|Á|A with acute (Spanish)|`00c1`|
-|É|E with acute (Spanish)|`00c9`|
-|Í|I with acute (Spanish)|`00cd`|
-|Ó|O with acute (Spanish)|`00d3`|
-|Ú|U with acute (Spanish)|`00da`|
-|Ñ|N with tilde (Spanish)|`00d1`|
-|ü|u with diaeresis (Spanish/German)|`00fc`|
-|Ü|U with diaeresis (Spanish/German)|`00dc`|
-|¿|Inverted question mark (Spanish)|`00bf`|
-|¡|Inverted exclamation mark (Spanish)|`00a1`|
-|ä|a with umlaut (German)|`00e4`|
-|ö|o with umlaut (German)|`00f6`|
-|Ä|A with umlaut (German)|`00c4`|
-|Ö|O with umlaut (German)|`00d6`|
-|ß|Eszett (sharp S) (German)|`00df`|
+| Character | Description                         | Unicode |
+| --------- | ----------------------------------- | ------- |
+| á         | a with acute (Spanish)              | `00e1`  |
+| é         | e with acute (Spanish)              | `00e9`  |
+| í         | i with acute (Spanish)              | `00ed`  |
+| ó         | o with acute (Spanish)              | `00f3`  |
+| ú         | u with acute (Spanish)              | `00fa`  |
+| ñ         | n with tilde (Spanish)              | `00f1`  |
+| Á         | A with acute (Spanish)              | `00c1`  |
+| É         | E with acute (Spanish)              | `00c9`  |
+| Í         | I with acute (Spanish)              | `00cd`  |
+| Ó         | O with acute (Spanish)              | `00d3`  |
+| Ú         | U with acute (Spanish)              | `00da`  |
+| Ñ         | N with tilde (Spanish)              | `00d1`  |
+| ü         | u with diaeresis (Spanish/German)   | `00fc`  |
+| Ü         | U with diaeresis (Spanish/German)   | `00dc`  |
+| ¿         | Inverted question mark (Spanish)    | `00bf`  |
+| ¡         | Inverted exclamation mark (Spanish) | `00a1`  |
+| ä         | a with umlaut (German)              | `00e4`  |
+| ö         | o with umlaut (German)              | `00f6`  |
+| Ä         | A with umlaut (German)              | `00c4`  |
+| Ö         | O with umlaut (German)              | `00d6`  |
+| ß         | Eszett (sharp S) (German)           | `00df`  |
 
-## Filezilla to share files is the best option
-
-## ZEROSSL WORKED WITH REVERSE NGINX!!!
-
-## SQL
-
-Common MariaDB/MySQL commands for database operations:
-
-- Login: `mariadb -u username -p`
-- Service Management:
-    - Start: `sudo systemctl start mariadb`
-- Database Operations:
-    - List databases: `SHOW DATABASES;`
-    - Check current user: `SELECT CURRENT_USER();`
-    - List tables: `SHOW TABLES;`
-    - View table data: `SELECT * FROM table_name;`
-- File Operations:
-    - Run SQL file: `sudo mariadb -u username -p < file.sql`
+### cerbot worked with reverse nginx, pm2 js bodyguard of server
+- on every change, pnpm build then pm2 restart backend
 
 ---
 

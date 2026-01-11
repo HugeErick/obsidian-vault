@@ -15,7 +15,9 @@ ma  " set mark a at current position
 :ls  " list all open buffers
 :b 2  " switch to buffer number 2
 :bn  " switch to next buffer
-
+<C-d> " jumps down half screen
+<C-u> " jumps up half screen
+{ and } "jump to the next/previous empty line (great for jumping over whole functions).
 ```
 
 ### editing & manipulation
