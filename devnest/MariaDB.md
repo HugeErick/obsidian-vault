@@ -17,4 +17,5 @@ collate utf8mb4_unicode_ci;
 delete database: `drop database db_name;`
 list users: `select User, Host from mysql.user;
 clear console: `system clear;`
+view structure/description of table: `describe table_name`;
 `

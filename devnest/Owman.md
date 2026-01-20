@@ -74,9 +74,17 @@ to exclude something
 
 `sudo pacman -Ss <search_term
 
+### Check if <packagename> is installed (pacman)
+
+`pacman -Qs <packagename>`
+
 ### Start venv py3
 
-`py -m venv .venv  "activate with source command in linux`
+`py<specific-version> -m venv .venv  "activate with source command in linux`
+
+### Donwload the requirements with pip
+
+`pip install -r requirements.txt`
 
 ### Compile and link assembly (x86_64, Linux):
 

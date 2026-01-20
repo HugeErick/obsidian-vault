@@ -57,6 +57,7 @@ gv  " reselect last visual selection
 :nmap  " list all normal mode maps
 :vmap  " list all visual mode maps
 :imap  " list all insert mode maps
+<leader>vs " selects venv for lsp (py)
 
 ```
 
@@ -74,13 +75,17 @@ zg          " Add word to dictionary
 <leader>F  " search files in current directory (fzf)
 <leader>fb  " search through open buffers (fzf)
 <leader>fl  " search lines in current file (fzf)
+:echo line('.') " shows total lines in buffer
 
 ```
 
 ## Neo-tree
 
+```
 `.` makes select node root
 `<leader>d` toggles between neo-tree and main buffer
 `<leader>e` toggles activating neo-tree (files sidebar)
 `backspace` makes the previous folder the new node root
+
+```
 
