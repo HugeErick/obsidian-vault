@@ -72,7 +72,7 @@ to exclude something
 
 ### Searching on remote repositories (pacman)
 
-`sudo pacman -Ss <search_term
+`sudo pacman -Ss <search_term`
 
 ### Check if <packagename> is installed (pacman)
 
@@ -90,10 +90,18 @@ to exclude something
 
 `nasm -f elf64 -g filename.asm -o objectfile.o && ld -m elf_x86_64 objectfile.o -o executable`
 
+### Get machine information
+
+`inxi -Fxz`
+
 ### Get images from docx
 `unzip -l your_document.docx`
 `mkdir docx_images`
 `unzip -j your_document.docx "word/media/*" -d docx_images`
+
+### unzip rar file in linux
+
+`unrar-free -x filename.rar`
 
 
 ---

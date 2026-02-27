@@ -35,7 +35,12 @@ gv  " reselect last visual selection
 :set paste  " turn on paste mode
 :set nopaste  " turn off paste mode
 * " (in visual mode) search selected pattern
-
+df} " (in normal mode) d -> del forward, f -> find, } -> target   
+df} " (in normal mode) d -> del backward, f -> find, } -> target   
+qa " (in normal mode) records macro in a 
+n@a " (in normal mode) applies macro n times 
+dt} " (in normal mode) deletes forward until target
+dT} " (in normal mode) deletes backward until target
 ```
 
 ### workflow & system
@@ -58,6 +63,8 @@ gv  " reselect last visual selection
 :vmap  " list all visual mode maps
 :imap  " list all insert mode maps
 <leader>vs " selects venv for lsp (py)
+<leader>mp " format with lsp (mason packages)
+K (in normal mode) " Lspsaga hover_doc
 
 ```
 
@@ -71,8 +78,8 @@ zg          " Add word to dictionary
 <leader>ss  " Keybind to enable dictionary (normal mode)
 <leader>ll  " Compile latex
 <leader>th  " toggle theme
-<leader>f  " search files starting 1 folder up (fzf)
-<leader>F  " search files in current directory (fzf)
+<leader>F  " search files starting 1 folder up (fzf)
+<leader>f  " search files in current directory (fzf)
 <leader>fb  " search through open buffers (fzf)
 <leader>fl  " search lines in current file (fzf)
 :echo line('.') " shows total lines in buffer

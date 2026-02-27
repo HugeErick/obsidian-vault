@@ -5,6 +5,7 @@ run external file: `sudo mariadb -u username -p < file.sql`
 grant privileges on:
 ```sql
 grant all privileges on `unwanteddb`.* to 'unwanted'@'localhost';
+grant all privileges on `unwanteddb`.* to 'unwanted'@'%';
 grant create on *.* to 'unwanted'@'localhost';
 flush privileges;
 ```
