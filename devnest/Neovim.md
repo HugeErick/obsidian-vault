@@ -37,7 +37,7 @@ gv  " reselect last visual selection
 * " (in visual mode) search selected pattern
 df} " (in normal mode) d -> del forward, f -> find, } -> target   
 df} " (in normal mode) d -> del backward, f -> find, } -> target   
-qa " (in normal mode) records macro in a 
+qa " (in normal mode) records macro in a (press q again to finish recording)
 n@a " (in normal mode) applies macro n times 
 dt} " (in normal mode) deletes forward until target
 dT} " (in normal mode) deletes backward until target

@@ -58,6 +58,7 @@ to exclude something
 ### Detach from SSH
 
 `Ctrl + d`
+
 ### Find process ID:
 
 `ps aux`
@@ -77,6 +78,10 @@ to exclude something
 ### Check if <packagename> is installed (pacman)
 
 `pacman -Qs <packagename>`
+
+### Query package void linux
+
+`xbps-query -Rs <search-term>`
 
 ### Start venv py3
 
@@ -101,7 +106,7 @@ to exclude something
 
 ### unzip rar file in linux
 
-`unrar-free -x filename.rar`
+`unar filename.rar`
 
 
 ---
