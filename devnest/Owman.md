@@ -97,7 +97,7 @@ to exclude something
 
 ### Get machine information
 
-`inxi -Fxz`
+`sudo inxi -Fxz`
 
 ### Get images from docx
 `unzip -l your_document.docx`

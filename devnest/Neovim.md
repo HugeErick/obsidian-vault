@@ -41,6 +41,7 @@ qa " (in normal mode) records macro in a (press q again to finish recording)
 n@a " (in normal mode) applies macro n times 
 dt} " (in normal mode) deletes forward until target
 dT} " (in normal mode) deletes backward until target
+:tabedit {file} " opens a tab where it edits file
 ```
 
 ### workflow & system
@@ -54,7 +55,13 @@ dT} " (in normal mode) deletes backward until target
 :!node %  " run current file with node
 :!gcc % && ./a.out  " compile and run c program
 :PeekOpen  " open markdown preview in browser
+
+# -----
 :lua vim.diagnostic.goto_next()  " jump to next lsp error
+<leader>n " (in normal mode) jump to next lsp error
+<leader>N " (in normal mode) jump to prev lsp error
+# -----
+
 :help tutor  " run vimtutor
 :help usr_02.txt  " open user manual chapter 2
 :map <leader>a  "shows all bindings for that key in all modes
@@ -83,16 +90,6 @@ zg          " Add word to dictionary
 <leader>fb  " search through open buffers (fzf)
 <leader>fl  " search lines in current file (fzf)
 :echo line('.') " shows total lines in buffer
-
-```
-
-## Neo-tree
-
-```
-`.` makes select node root
-`<leader>d` toggles between neo-tree and main buffer
-`<leader>e` toggles activating neo-tree (files sidebar)
-`backspace` makes the previous folder the new node root
 
 ```
 
